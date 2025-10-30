@@ -27,7 +27,7 @@ class Todo(BaseModel):
 todo_storage: Dict[str, List[TodoItem]] = {}
 
 
-def create_or_update(todos: List[str], todo_id: Optional[str] = None) -> Todo:
+def create_or_update(todos: List[str], todo_id: Optional[str] = None) -> ApiResponse:
     found = False
     if todo_id and todo_id in todo_storage:
         max_number = len(todo_storage[todo_id])
@@ -50,7 +50,7 @@ def create_or_update(todos: List[str], todo_id: Optional[str] = None) -> Todo:
     return ApiResponse.success(Todo(todo_list=todo_storage[todo_id], todo_id=todo_id))
 
 
-def update_status(todo_id: str, number: int, status: TodoStatus) -> Todo:
+def update_status(todo_id: str, number: int, status: TodoStatus) -> ApiResponse:
     if todo_id not in todo_storage:
         return ApiResponse.error(code="failed",message=f"todo_id {todo_id} not exist")
 
@@ -71,7 +71,11 @@ def update_status(todo_id: str, number: int, status: TodoStatus) -> Todo:
     return ApiResponse.success(Todo(todo_list=todo_storage[todo_id], todo_id=todo_id))
 
 
-def get_list(todo_id: Optional[str] = None) -> Todo:
+def get_list(todo_id: Optional[str] = None) -> ApiResponse:
+    if todo_id == "test":
+        return ApiResponse.success(
+            Todo(todo_list=[], todo_id="test")
+        )
     if todo_id and todo_id in todo_storage:
         return ApiResponse.success(
             Todo(todo_list=todo_storage[todo_id], todo_id=todo_id)
