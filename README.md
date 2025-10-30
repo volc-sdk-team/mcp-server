@@ -142,6 +142,7 @@ MCP Server列表 与 **[火山引擎大模型生态广场](https://www.volcengin
 - **[OpenAPI](https://github.com/snaggle-ai/openapi-mcp-server)**：Interact with OpenAPI APIs.  
 - **[OpenCTI](https://github.com/Spathodea-Network/opencti-mcp)**：Interact with OpenCTI platform to retrieve threat intelligence data.  
 - **[OpenRPC](https://github.com/shanejonas/openrpc-mpc-server)**：Interact with and discover JSON-RPC APIs via OpenRPC.  
+- **[Deploy MCP](https://github.com/volcengine/mcp-server/tree/main/server/mcp_server_vefaas_browser_use)**： 云部署智能体使用的MCP工具。 
 
 
 ### **搜索工具**  
