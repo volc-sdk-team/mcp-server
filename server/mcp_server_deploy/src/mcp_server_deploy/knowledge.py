@@ -17,7 +17,7 @@ def search_knowledge_api(ctx: Context, error_msg: str) -> ApiResponse:
 
         # 初始化api_client
         api_client = get_api_client(
-            ak, sk, "deploy-agent.volcengineapi.com", "cn-beijing", token
+            ak, sk, "open.volcengineapi.com", "cn-beijing", token
         )
 
         # 调用SearchKnowledge接口

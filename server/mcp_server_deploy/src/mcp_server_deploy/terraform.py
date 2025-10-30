@@ -41,7 +41,7 @@ def generate_terraform_api(
 
         # 初始化api_client
         api_client = get_api_client(
-            ak, sk, "deploy-agent.volcengineapi.com", "cn-beijing", token
+            ak, sk, "open.volcengineapi.com", "cn-beijing", token
         )
 
         user_deploy_conf = parse_user_deploy_conf(deploy_yaml)

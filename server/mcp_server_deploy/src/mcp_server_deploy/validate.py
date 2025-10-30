@@ -16,7 +16,7 @@ def validate_account_api(ctx: Context) -> ApiResponse:
         token = credentials["token"]
         # 初始化api_client
         api_client = get_api_client(
-            ak, sk, "deploy-agent.volcengineapi.com", "cn-beijing", token
+            ak, sk, "open.volcengineapi.com", "cn-beijing", token
         )
 
         # 调用CheckPurchasePermission接口
